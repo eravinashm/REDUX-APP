@@ -13,6 +13,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <React.Fragment>
         <HeaderNavbar pageHeading={this.state.pageHeading} />

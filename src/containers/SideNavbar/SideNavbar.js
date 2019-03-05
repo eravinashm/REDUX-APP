@@ -5,10 +5,12 @@ import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 
 import About from '../About/About';
 import Home from '../Home/Home';
+import Userpage from '../Userpage/Userpage';
 import './SideNavbar.css';
 
 class SideNavbar extends Component{
     render(){
+      console.log(this.props)
         return(
             <Route render={({ location, history }) => (
                 <React.Fragment>
@@ -39,11 +41,22 @@ class SideNavbar extends Component{
                               About
                           </NavText>
                       </NavItem>
+                      <NavItem eventKey="userpage">
+                          <NavIcon>
+                              <i className="fa fa-book" style={{fontSize: '1.75em'}} />
+                          </NavIcon>
+                          <NavText>
+                              Userpage
+                          </NavText>
+                      </NavItem>
                   </SideNav.Nav>
                 </SideNav>
                 <main>
-                  <Route path='/home' exact component={props => <Home />} />
-                  <Route path='/about' component={props => <About/> } />
+                  <Switch>
+                    <Route path='/home' exact component={Home} />
+                    <Route path='/about' component={About} />
+                    <Route path='/userpage' component={Userpage} />
+                  </Switch>
                 </main>
                 </React.Fragment>
               )}
