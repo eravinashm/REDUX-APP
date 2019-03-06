@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 
+import { updatePageHeading } from '../../../actions/pageActions';
+import store from '../../../store';
+
 class ProfileSection extends Component{
     btnClickHandler = () => {
+        store.dispatch(updatePageHeading('ABOUT'));
         this.props.history.push('/about');
     }
 

@@ -4,9 +4,10 @@ import './HeaderNavbar.css';
 
 class HeaderNavbar extends Component {
     render(){
+        let heading = this.props.pageHeading;
         return(
             <div className="header-navbar">
-                <h1>{this.props.pageHeading}</h1>
+                <h1>{heading.toUpperCase()}</h1>
             </div>
         )
     }

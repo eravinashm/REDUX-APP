@@ -1,31 +1,38 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
+import store from './store';
 // import './App.css';
 import HeaderNavbar from './containers/HeaderNavbar/HeaderNavbar';
 import SideNavbar from './containers/SideNavbar/SideNavbar';
+import { updatePageHeading } from './actions/pageActions';
+
 class App extends Component {
-  state = {
-    pageHeading: 'HOME'
-  }
 
   callbackPageHeading = (pageHeading) => {
-    this.setState({pageHeading: pageHeading});
+    store.dispatch(updatePageHeading(pageHeading));
   }
 
   render() {
-    console.log(this.props)
+    // console.log(this.props);
+    console.log(this.props.pageHeading.pageHeading);
     return (
       <React.Fragment>
-        <HeaderNavbar pageHeading={this.state.pageHeading} />
+        <HeaderNavbar pageHeading={this.props.pageHeading.pageHeading} />
         <SideNavbar  callbackPageHeading={this.callbackPageHeading} />
       </React.Fragment>
     );
   }
 }
 
+const mapStateToProps = param => {
+  console.log(param)
+  return {
+    pageHeading: param.pageHeading
+  }
+}
 
-
-export default App;
+export default connect(mapStateToProps)(App);
 {/*
  <div className="App">
         <img 
