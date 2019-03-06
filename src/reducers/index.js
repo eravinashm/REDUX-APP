@@ -11,4 +11,6 @@ const allReducers = {
 
 const rootReducer = combineReducers(allReducers);
 
+// const rootReducer = pageHeadingReducer;
+
 export default rootReducer;

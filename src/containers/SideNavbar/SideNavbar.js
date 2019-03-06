@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 
@@ -7,10 +7,11 @@ import About from '../About/About';
 import Home from '../Home/Home';
 import Userpage from '../Userpage/Userpage';
 import './SideNavbar.css';
+import PageNotFound from '../PageNotFound/PageNotFound';
 
 class SideNavbar extends Component{
     render(){
-      console.log(this.props)
+      // console.log(this.props)
         return(
             <Route render={({ location, history }) => (
                 <React.Fragment>
@@ -53,9 +54,12 @@ class SideNavbar extends Component{
                 </SideNav>
                 <main>
                   <Switch>
+                    <Route path='/' exact component={Home} />
                     <Route path='/home' exact component={Home} />
                     <Route path='/about' component={About} />
                     <Route path='/userpage' component={Userpage} />
+                    <Route render={() => <PageNotFound />} />
+                    {/* <Redirect from='/' to='/home' /> */}
                   </Switch>
                 </main>
                 </React.Fragment>

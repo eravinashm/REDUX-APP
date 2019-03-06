@@ -4,7 +4,7 @@ import ProfileSection from './ProfileSection/ProfileSection';
 
 class Userpage extends Component{
     render(){
-        console.log(this.props)
+        // console.log(this.props)
         return(
             <div className="sidenavbar-expanded">
                 <ProfileSection />

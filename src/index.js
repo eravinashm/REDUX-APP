@@ -1,11 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-// import configureStore from './store';
 import { BrowserRouter } from 'react-router-dom';
-import store from './store';
 
-// import { updatePageHeading } from './actions/pageActions';
+import store from './store';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -15,18 +13,6 @@ import * as serviceWorker from './serviceWorker';
 // let unsubscribe = store.subscribe(() => 
 //     console.log(store.getState())
 // )
-/*
-store.dispatch(addToCart('Coffee 500gm', 1, 250));
-store.dispatch(addToCart('Flour 1kg', 2, 110));
-store.dispatch(addToCart('Juice 2L', 1, 250));
-// Update Cart
-store.dispatch(updateCart('Flour 1kg', 5, 110));
-
-// Delete from Cart
-store.dispatch(deleteFromCart('Coffee 500gm'));
-*/
-
-// store.dispatch(updatePageHeading('HOME'));
 
 // unsubscribe();
 

@@ -10,15 +10,14 @@ import { updatePageHeading } from './actions/pageActions';
 class App extends Component {
 
   callbackPageHeading = (pageHeading) => {
+    // debugger;
     store.dispatch(updatePageHeading(pageHeading));
   }
 
   render() {
-    // console.log(this.props);
-    console.log(this.props.pageHeading.pageHeading);
     return (
       <React.Fragment>
-        <HeaderNavbar pageHeading={this.props.pageHeading.pageHeading} />
+        <HeaderNavbar />
         <SideNavbar  callbackPageHeading={this.callbackPageHeading} />
       </React.Fragment>
     );
@@ -26,10 +25,8 @@ class App extends Component {
 }
 
 const mapStateToProps = param => {
-  console.log(param)
-  return {
-    pageHeading: param.pageHeading
-  }
+  // console.log(param)
+  return {param} 
 }
 
 export default connect(mapStateToProps)(App);
